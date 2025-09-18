@@ -1,0 +1,36 @@
+[x] Läs på om metadatan så du vet vad de olika kolumnerna betyder. 
+[x] Gör explorativa dataanalyser
+[x] Rita grafer
+[] Hantera null värden
+    - Testa datan med att fylla i med median
+    - Testa datan med att fylla med 0
+[] Gör dataanalyser på den hanterade datan
+[] Ta bort outliers
+[] Exportera datan
+    - till csv
+[] Ta fram en ML modell för att prediktera priset
+    - Gå igenom data science workflow
+    - testa olika modeller och evaluera
+        - Använd sckit och random forest
+[] Exportera datan med joblib
+[] Skapa en backend och ett Api-lager
+    - Använd FastApi för att serva datan
+    - Skapa olika endpoints för att läsa delar av datan
+    - Skapa ett sätt för användaren att mata in olika parameterar för att göra en prediktion
+[] Bygg frontend
+    - Använd streamlit
+    - Vad är intressant att veta?
+    - Vad är intressant att se predictions på?
+    - Enkel och förståelig UI för användaren
+        - Sökning
+        - Flikar
+        - Grafer, barer
+        - Logga in/ut
+        - Information i text, gemeni?
+[] Spela in en videopitch
+    - Visa upp applikationen
+    - Presentera övergripande hur koden fungerar
+    - 5 till 10 min lång
+
+[] om jobbat tillsammans, skriv ner vilka
+    -
