@@ -1,17 +1,21 @@
 [x] Läs på om metadatan så du vet vad de olika kolumnerna betyder. 
 [x] Gör explorativa dataanalyser
 [x] Rita grafer
-[] Hantera null värden
+[x] Hantera null värden
     - Testa datan med att fylla i med median
     - Testa datan med att fylla med 0
-[] Gör dataanalyser på den hanterade datan
-[] Ta bort outliers
+[x] Gör dataanalyser på den hanterade datan
+    - Bestäm vilka kolumner som ska med
+[x] Ta bort outliers
 [] Exportera datan
-    - till csv
+    - Spara all data, med dummy data
+    - Spara data utan dummy data
+    - Spara endast de numeriska kolumnerna
+    - Spara all data, även de icke numeriska
 [] Ta fram en ML modell för att prediktera priset
-    - Gå igenom data science workflow
-    - testa olika modeller och evaluera
-        - Använd sckit och random forest
+    - Gå igenom data science workflow för att hitta den bästa modellen
+    - Testa med all lagrad data för att se hur MEA, MSE och RMSE påverkas
+    - Testa olika modeller och evaluera, vilken är bäst i detta fallet
 [] Exportera datan med joblib
 [] Skapa en backend och ett Api-lager
     - Använd FastApi för att serva datan
