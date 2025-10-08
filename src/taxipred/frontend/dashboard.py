@@ -1,13 +1,11 @@
+from taxipred.frontend.app_layout.pages.layout import dashboard_pages
+from taxipred.utils.helpers import button_colour
 import streamlit as st
-from taxipred.utils.helpers import read_api_endpoint
-import pandas as pd
 
-data = read_api_endpoint("taxi")
-df = pd.DataFrame(data.json())
+# def Main():
+st.set_page_config(page_title="TaxiPrediction", layout="centered")
+button_colour()
+dashboard_pages()
 
-def main():
-    st.markdown("# Taxi predicition dashboard")
-    st.dataframe(df)
-
-if __name__ == "__main__":
-    main()
+# if __name__ == "__Main__":
+#     Main()
