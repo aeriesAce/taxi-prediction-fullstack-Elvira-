@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 from taxipred.utils.helpers import read_api_endpoint, usd_to_sek, post_api_endpoint, predict_price
 from taxipred.backend.charts import best_time_to_travel
 API_URL_COND = read_api_endpoint("/conditions")
@@ -13,6 +14,7 @@ with col1:
 
     with st.spinner("Räknar ut priset, ett ögonblick 🚖"):
         if submitted:
+            time.sleep(1)
             payload = {
                 "Trip_Distance_km": distance,
                 "Passenger_Count": passengers,
@@ -39,6 +41,7 @@ with col_left:
     price_submit = st.button("Räkna med väder/trafik")
 
     with st.spinner("Räknar ut priset, ett ögonblick 🚖"):
+        time.sleep(1)
         if price_submit:
             payload = {
                 "Base_Fare": st.session_state["base_price"],

@@ -99,9 +99,9 @@ class TaxiData:
     # since these doesnt affect the price that much, but affects 
     # trip_distance_km a little, I decided to add a small amount that will affect the price
     def condtion_price_addon(self, base_fare: float, weather: str, traffic: str, time_of_day: str) -> float:
-        WEATHER = {"Klart": 0.0, "Regn": 0.15, "Snö": 0.3}
+        WEATHER = {"Klart": 0.0, "Regn": 0.1, "Snö": 0.2}
         TRAFFIC  = {"Låg": 0.0, "Medium": 0.1, "Hög": 0.2}
-        TIME = {"Morgon": 0.0, "Eftermiddag": 0.2, "Kväll": 0.2, "Natt": 0.0}
+        TIME = {"Morgon": 0.0, "Eftermiddag": 0.2, "Kväll": 0.1, "Natt": 0.0}
 
         total_factor = WEATHER.get(weather, 0.0) + \
                        TRAFFIC.get(traffic, 0.0) + \
@@ -116,7 +116,7 @@ class TaxiData:
             "median_price": df_filtered["Trip_Price"].median(),
             "avg_price": df_filtered["Trip_Price"].mean(),
             "avg_price_per_km": (df_filtered["Trip_Price"] / df_filtered["Trip_Distance_km"]).mean(),
-            "median_trip_distance_km": self.df_training["Trip_Distance_km"].median(), 
+            "median_trip_distance_km": df_filtered["Trip_Distance_km"].median(), 
             "top_times_of_day": df_filtered["Time_of_Day"].value_counts().to_dict(),
             "top_days_of_week": df_filtered["Day_of_Week"].value_counts().to_dict(),
         }
@@ -129,12 +129,9 @@ class TaxiData:
     # function to get model standards and statistics
     def get_model_stats(self):
         y_pred = self.model.predict(self.X_test)
-
         mae = mean_absolute_error(self.y_test, y_pred)
-    
         mse = mean_squared_error(self.y_test, y_pred)
         rmse = np.sqrt(mse)
-        
         r2 = r2_score(self.y_test, y_pred)
 
         return {
@@ -147,7 +144,7 @@ class TaxiData:
 
 # for testing the model
 class PriceInputTest(BaseModel):
-    Trip_Distance_km: float = Field(..., gt=0, lt=10000)
+    Trip_Distance_km: float = Field(..., gt=0, lt=120)
     Base_Fare: float = Field(..., gt=0, lt=200)
     Per_Km_Rate: float = Field(..., gt=0, lt=800)
     Per_Minute_Rate: float = Field(..., gt=0, lt=800)
@@ -177,10 +174,6 @@ class UserPriceInput(BaseModel):
     Day_of_Week: Optional[str] = Field(default=None)
     Traffic_Conditions: Optional[str] = Field(default=None)
     Weather: Optional[str] = Field(default=None)
-
-class StatsUserInput(BaseModel):
-    Time_of_Day: str
-    Day_of_Week: str
 
 class PredictionOutput(BaseModel):
     predicted_price: float

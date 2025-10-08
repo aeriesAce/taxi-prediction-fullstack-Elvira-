@@ -30,9 +30,3 @@ def best_time_to_travel():
     st.markdown("Populära restider")
     st.info("Tips för när du bokar!\nHåll utkik efter rusningstider då priserna kan bli dyrare! 💸")
     st.bar_chart(df_pivot)
-
-
-def modell_predict_histo():
-    df = pd.DataFrame(taxi_data.price_stats)
-    df["prediction_error"] = df["predicted_price"] - df["Trip_Price"]
-    st.bar_chart(df["prediction_error"])

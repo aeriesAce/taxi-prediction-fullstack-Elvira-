@@ -1,5 +1,5 @@
 from fastapi import FastAPI, APIRouter, HTTPException
-from taxipred.backend.data_processing import TaxiData, PredictionOutput, UserPriceInput, PriceInputTest, StatsUserInput, ConditionsAddonPrice
+from taxipred.backend.data_processing import TaxiData, PredictionOutput, UserPriceInput, PriceInputTest, ConditionsAddonPrice
 import pandas as pd
 import joblib
 from taxipred.utils.constants import MODEL_PATH
