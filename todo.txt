@@ -7,21 +7,20 @@
 [x] Gör dataanalyser på den hanterade datan
     - Bestäm vilka kolumner som ska med
 [x] Ta bort outliers
-[] Exportera datan
+[x] Exportera datan
     - Spara all data, med dummy data
     - Spara data utan dummy data
-    - Spara endast de numeriska kolumnerna
-    - Spara all data, även de icke numeriska
-[] Ta fram en ML modell för att prediktera priset
+    - Spara data utan labels
+[x] Ta fram en ML modell för att prediktera priset
     - Gå igenom data science workflow för att hitta den bästa modellen
     - Testa med all lagrad data för att se hur MEA, MSE och RMSE påverkas
     - Testa olika modeller och evaluera, vilken är bäst i detta fallet
-[] Exportera datan med joblib
-[] Skapa en backend och ett Api-lager
+[x] Exportera datan med joblib
+[x] Skapa en backend och ett Api-lager
     - Använd FastApi för att serva datan
     - Skapa olika endpoints för att läsa delar av datan
     - Skapa ett sätt för användaren att mata in olika parameterar för att göra en prediktion
-[] Bygg frontend
+[x] Bygg frontend
     - Använd streamlit
     - Vad är intressant att veta?
     - Vad är intressant att se predictions på?
@@ -29,12 +28,9 @@
         - Sökning
         - Flikar
         - Grafer, barer
-        - Logga in/ut
-        - Information i text, gemeni?
-[] Spela in en videopitch
+[x] Spela in en videopitch
     - Visa upp applikationen
     - Presentera övergripande hur koden fungerar
     - 5 till 10 min lång
 
-[] om jobbat tillsammans, skriv ner vilka
-    -
+[] Uppdatera Readme.md filen så den är up to date
